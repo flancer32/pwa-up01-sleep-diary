@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sleep Diary">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+    <title>Sleep Diary</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon-32.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./pwa.json">
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            // Register Service Worker on page load (if not registered before)
+            self.addEventListener('load', async () => {
+                const container = navigator.serviceWorker;
+                if (container.controller === null) await container.register('sw.js');
+            });
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="app">
+    <input-form></input-form>
+</div>
+
+<script src="./js/lib/vue.global.min.js"></script>
+<script src="./js/lib/naive-ui.min.js"></script>
+<script type="module">
+    import InputForm from './js/src/comp/Form.mjs';
+
+    const app = Vue.createApp({});
+    app.use(window.naive);
+    app.component('InputForm', InputForm);
+    app.mount('#app')
+</script>
+</body>
+</html>

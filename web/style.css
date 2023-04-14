@@ -1,0 +1,19 @@
+:root {
+    --color-lightest: #e9dffb;
+    --color-lighter: #905bec;
+    --color-main: #5a18c9;
+    --color-darker: #300d6e;
+    --color-darkest: #190934;
+    --size-xs: 2px;
+    --size-sm: 5px;
+    --size-md: 10px;
+}
+
+BODY {
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    padding: var(--size-md);
+}
